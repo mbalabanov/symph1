@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}News{% endblock  %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12 mt-4 text-center">
+            <h1>News</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                {% for newsitem in news %}
+                    <div class="col-md-12">
+                        <div class="border m-2 p-2 rounded-lg">
+                            <h3>{{ newsitem.title }}</h3>
+                            <p class="my-1">{{ newsitem.content }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {{ include('sidebar.html') }}
+    </div>
+
+{% endblock %}

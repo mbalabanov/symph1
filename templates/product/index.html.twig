@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travel Agency{% endblock  %}
+
+{% block body %}
+        {% for product in  products  %}
+                <ul>
+                    <li>{{ product.name }}</li>
+                    <li>{{ product.price }}</li>
+                </ul>
+        {% endfor %}
+{% endblock %}
