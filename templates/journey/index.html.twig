@@ -7,6 +7,11 @@
         <div class="col-md-12 mt-4 text-center">
             <h1 class="text-secondary">Destinations</h1>
             <a href="/add" class="btn btn-primary my-4">Add New Destination</a>
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-warning mt-4">
+                    {{ message }}
+                </div>
+            {% endfor %}
         </div>
     </div>
     <div class="row">
@@ -21,6 +26,10 @@
                         <div class="col-md-7">
                             <p class="mt-5">{{ journey.description }}</p>
                             <p><strong>Price: € {{ journey.price }}</strong></p>
+                            <p>
+                                <a  href="/edit/{{journey.id}}" class= "btn btn-primary btn-sm mr-2">Edit</a>
+                                <a href="/delete/{{journey.id}}"  class="btn btn-danger btn-sm mr-2">Delete</a>
+                            </p>
                         </div>
                     </div>
                 </div>
